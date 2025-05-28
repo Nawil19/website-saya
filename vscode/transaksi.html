@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Formulir Transaksi</title>
+  <script>
+    function tampilkanPesan(event) {
+      event.preventDefault();
+      document.getElementById('formulir').style.display = 'none';
+      document.getElementById('pesanTerkirim').style.display = 'block';
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <h1>Formulir Transaksi</h1>
+  </header>
+  <form id="formulir" onsubmit="tampilkanPesan(event)">
+    <label>Nama Pembeli:</label><br>
+    <input type="text" name="nama" required><br><br>
+
+    <label>Alamat:</label><br>
+    <textarea name="alamat" required></textarea><br><br>
+
+    <label>Produk:</label><br>
+    <select name="produk" required>
+      <option>Laptop Asas</option>
+    </select><br><br>
+
+    <label>Jumlah:</label><br>
+    <input type="number" name="jumlah" required><br><br>
+
+    <label>Metode Pembayaran:</label><br>
+    <input type="radio" name="bayar" value="Transfer" required> Transfer Bank<br>
+    <input type="radio" name="bayar" value="COD"> COD<br><br>
+
+    <input type="submit" value="Kirim">
+  </form>
+
+  <div id="pesanTerkirim" style="display: none;">
+    <h2>Format berhasil dikirim!</h2>
+    <p>Terima kasih atas pembelian Anda. Kami akan segera memproses transaksi Anda.</p>
+    <p><a href="Produk.html">Kembali ke Produk</a></p>
+  </div>
+</body>
+</html>
